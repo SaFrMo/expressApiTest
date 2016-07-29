@@ -4,7 +4,7 @@ const   express     = require('express'),
         router      = express.Router();
 
 router.get('/', (req, res) => {
-    res.send('Views route contacted');
+    res.render('index');
 });
 
 module.exports = router;

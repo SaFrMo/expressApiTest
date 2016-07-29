@@ -53,6 +53,10 @@ app.use(bodyParser.json());
 
 app.use( morgan('dev') );
 
+// Set up view engine
+app.set('view engine', 'jade');
+app.set('views', './app/views');
+
 // PREP ROUTES
 // ========
 
