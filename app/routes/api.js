@@ -1,7 +1,9 @@
 "use strict";
 
 const   express     = require('express'),
-        router      = express.Router();
+        router      = express.Router(),
+        mongoose    = require('mongoose'),
+        User        = require('../models/user');
 
 // Heartbeat
 router.get('/', (req, res) => {
@@ -164,8 +166,8 @@ router.post('/users/delete', (req, res) => {
 
 // Login (retrieve auth)
 router.post('/auth', (req, res) => {
-    let name        = req.body.name,
-        password    = req.body.password;
+    let name        = req.body.name || req.query.name,
+        password    = req.body.password || req.query.password;
 
     // Try to find the user
     User.findOne({ name: name }, (err, user) => {

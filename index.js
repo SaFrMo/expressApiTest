@@ -53,6 +53,8 @@ app.use(bodyParser.json());
 
 app.use( morgan('dev') );
 
+app.locals.basedir = './app/views';
+
 // Set up view engine
 app.set('view engine', 'jade');
 app.set('views', './app/views');

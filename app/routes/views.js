@@ -1,10 +1,13 @@
 "use strict";
 
 const   express     = require('express'),
-        router      = express.Router();
+        router      = express.Router(),
+        jade        = require('jade');
 
 router.get('/', (req, res) => {
-    res.render('index');
+    res.render('login', {
+        title: 'Login'
+    });
 });
 
 module.exports = router;

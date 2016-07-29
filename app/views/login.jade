@@ -1,0 +1,10 @@
+include ./header.jade
+h1 You've reached the Users page!
+
+div.login-container
+    span Enter your information here:
+    form(name="login", method="post", action="api/auth")
+        input(type="text", name="name")
+        input(type="text", name="password")
+        input(type="submit", value="Go")
+include ./footer.jade
